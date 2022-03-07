@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   width: 80%;
+   margin-left: 10%;
+   margin-bottom: 20px;
+   justify-content: space-between;
+}
+.card {
+   display: flex;
+   width: 45%;
+   padding-top: 15px;
+}
+.card img {
+   width: 300px;
+   height: 150px;
+   border: 2px solid red;
+   margin-right: 20px;
+   border-radius: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btns-container {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btns-container h1 {
+   /* border-bottom: 4px solid red; */
+   font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btns-container h1::after {
+   content: ""; /* This is necessary for the pseudo element to work. */
+   display: block; /* This will put the pseudo element on its own line. */
+   margin: 0 auto; /* This will center the border. */
+   width: 60%; /* Change this to whatever width you want. */
+   padding-top: 10px; /* This creates some space between the element and the border. */
+   border-bottom: 4px solid red;
+}
+.btns button {
+   cursor: pointer;
+   margin-right: 10px;
+   background-color: transparent;
+   border: none;
+   font-size: 20px;
+   border: 1px solid rgb(255, 0, 0);
+   border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+  /* .btns button:focus {
+   background-color: red;
+} */
+
+
+.name-price {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   border-bottom: 2px solid red;
+   height: 40px;
+   margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.name-price #title {
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.desc {
+   color: gray;
+   font-weight: 500;
+}
+
+.details {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+}
+
+@media only screen and (max-width: 898px) {
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .card img {
+      width: 100%;
+      margin-bottom: 15px;
+   }
+   .card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      width: 60%;
+   }
+}
+
+@media only screen and (max-width: 624px) {
+   .container {
+      width: 100%;
+      margin-left: 0;
+      justify-content: center;
+      flex-wrap: nowrap;
+   }
+
+   .card {
+      width: 80%;
+      margin-bottom: 50px;
+   }
+
+   .btns-container button {
+      border: 1px solid red;
+      margin-top: 20px;
+   }
+   .btns {
+      width: 80%;
+      justify-content: space-between;
+   }
 }
